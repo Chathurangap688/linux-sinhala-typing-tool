@@ -7,6 +7,6 @@ make suar you need python-pip
     sudo apt-get install python-pip
 
 Run: 
-    python main.py
+     # python main.py
 
 to close the programm enter this mark-> ` 
