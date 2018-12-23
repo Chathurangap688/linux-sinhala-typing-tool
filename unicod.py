@@ -3,7 +3,7 @@ import data_tree as tree
 def get_unicode(root, word):
     un = ""
     word += '*'
-    uniPrint(0, root, word, root, 1, un)
+    return uniPrint(0, root, word, root, 1, un)
 
 
 def uniPrint(count, root, word, ROOT, s, un): 
@@ -25,16 +25,16 @@ def uniPrint(count, root, word, ROOT, s, un):
             fob.write('\n')
             un = un.replace('*','')
             un = un.replace(' ','')
-            print un.decode('unicode-escape')
+           # print un.decode('unicode-escape')
 
-            return 
+            return un.decode('unicode-escape')
 
         if(child.letter == word[count]):
             # print(222)
             temp = child
             state = 1
 
-            uniPrint(count+1, child, word, ROOT, s, un)
+            return uniPrint(count+1, child, word, ROOT, s, un)
             break
         else:
             pass
@@ -61,7 +61,7 @@ def uniPrint(count, root, word, ROOT, s, un):
         un += val
 
 
-        uniPrint(count, ROOT, word, ROOT, s, un)
+        return uniPrint(count, ROOT, word, ROOT, s, un)
     return
 
 def add(node, count, word, unic, s):
