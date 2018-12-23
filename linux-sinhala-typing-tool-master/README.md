@@ -1,0 +1,1 @@
+# linux-sinhala-typing-tool
