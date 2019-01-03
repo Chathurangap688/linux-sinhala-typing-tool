@@ -25,9 +25,10 @@ def uniPrint(count, root, word, ROOT, s, un):
             fob.write('\n')
             un = un.replace('*','')
             un = un.replace(' ','')
+            un = un.upper()
            # print un.decode('unicode-escape')
 
-            return un.decode('unicode-escape')
+            return un #.decode('unicode-escape')
 
         if(child.letter == word[count]):
             # print(222)

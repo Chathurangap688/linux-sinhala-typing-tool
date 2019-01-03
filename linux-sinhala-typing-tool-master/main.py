@@ -4,6 +4,7 @@ import data_tree as data
 import unicod as uni
 import keyboard
 import sys
+import type
 import os
 
 reload(sys)
@@ -24,9 +25,11 @@ def OnKeyPress(event):
     global root
     global keyboard
     a = event.Ascii
-    if ((a> 96)&(a< 123))|((a> 64)&(a< 91)):
-      array += event.Key 
-      #print(event.Key)
+    if ((a> 96)&(a< 123))|((a> 70)&(a< 91)):
+      if(a!=85):
+        array += event.Key
+       
+    
     #remove unwanted char for backspaces
     if(event.Key == "BackSpace"):
       array = array[:-1]
@@ -34,23 +37,26 @@ def OnKeyPress(event):
       #pause the key capturing
       capture_keys=False
       #print on terminal for development needs
-      print(uni.get_unicode(root,array[1:]))
-      text = uni.get_unicode(root,array[1:])+"  "
-      #copy text to the clipboard
-      os.system("echo -n {s} | xsel -b".format(s=text))
-      #keyboard.write(unicode( uni.get_unicode(root,array),"utf-8"))
+      #print(uni.get_unicode(root,array[1:]))
+      if(array == " "):
+        return
+      text = uni.get_unicode(root,array)
+      lenth = len(array)
+      array= ''
+
       
       #neglect if array is null
-      if(array!=""):
+      if(text):
         #remove last space
         #keyboard.press_and_release('BackSpace')
         #remove english input
-        for i in range(0,len(array)):
-          keyboard.press_and_release('BackSpace')
-        #past from clipboard and press new space
-        keyboard.press_and_release('ctrl + v')
-        keyboard.press_and_release('right')
+
+        
+        text = text.lower()
         array = ""
+        type.type_unicode(text,capture_keys,lenth)
+        array = ""
+        text = ""
         
       capture_keys=True
 
