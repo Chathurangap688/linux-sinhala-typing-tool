@@ -5,3 +5,19 @@
             රෝචන පතිරාජ, 
             රසික මදුරංග සහ 
             චතුරංග ප්‍රියදර්ශණ  
+
+
+
+before run this tool you will need following  libraries.
+
+pyxhook
+	sudo pip install pyxhook
+
+keyboard
+	sudo pip install keyboard
+
+sys
+	sudo pip install sys
+
+os
+	sudo pip install os
