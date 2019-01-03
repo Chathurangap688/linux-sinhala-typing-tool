@@ -22,3 +22,6 @@ before run this tool you will need following  libraries.
 
 ###### os
 	sudo pip install os
+	
+###### PyAutoGUI
+	pip install PyAutoGUI
