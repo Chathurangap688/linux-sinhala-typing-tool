@@ -10,14 +10,15 @@
 
 before run this tool you will need following  libraries.
 
-pyxhook
-	sudo pip install pyxhook
 
-keyboard
+###### pyxhook
+	sudo pip install pyx
+	
+###### keyboard
 	sudo pip install keyboard
 
-sys
+###### sys
 	sudo pip install sys
 
-os
+###### os
 	sudo pip install os
