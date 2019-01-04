@@ -7,8 +7,6 @@ import sys
 import type
 import os
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
 #change this to your log file's path
 #this function is called everytime a key is pressed.
 

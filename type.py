@@ -11,6 +11,7 @@ def type_unicode(word,state,lenth):
     pyautogui.keyDown('ctrl')
     pyautogui.keyDown('shift')
     pyautogui.typewrite(word)
+    print(word)
     pyautogui.keyUp('ctrl')
     pyautogui.keyUp('shift')  
     pyautogui.press('space')
