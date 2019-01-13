@@ -10,6 +10,8 @@
 
 before run this tool you will need following  libraries.
 
+if you are using python3, use 'pip3' instead.
+
 
 ###### pyxhook
 	sudo pip install pyxhook
@@ -28,6 +30,9 @@ before run this tool you will need following  libraries.
   
 ###### pyperclip
 	sudo pip install pyperclip
+	
+###### pypnut
+	sudo pip install pypnut
 
 
                          
