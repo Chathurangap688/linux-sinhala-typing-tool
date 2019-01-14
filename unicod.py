@@ -1,28 +1,37 @@
 import data_tree as tree
-
+co = 0
 def get_unicode(root, word):
+    global co
+    co = 0
     un = ""
     word += '*'
     return uniPrint(0, root, word, root, 1, un)
 
 
-def uniPrint(count, root, word, ROOT, s, un): 
+def uniPrint(count, root, word, ROOT, s, un):
+    global co
+    co = co + 1
+    if(co>200):
+        #print('max')
+        #exit()
+        #print("jjjj")
+        return False
+    if(len(word)==count+1):    
+        o = ord(word[count])
+        if(((64>o)&(91<o))|((96>o)&(123<o))):
+            print('exit')
+            return False
     node = root
     temp = root
     state = 0
     puni = '\u0000'
-    if count >= (len(word)+1):
-
+    if (count >= (len(word)+1)):
         print("exit")
         return
 
     for child in node.children:
-        if count >= (len(word)):
+        if (count >= (len(word))):
             #print("  ")
-           
-            # log_file='new.txt'
-            # fob=open(log_file,'a')
-            # fob.write('\n')
             un = un.replace('*','')
             un = un.replace(' ','')
             un = un.upper()
@@ -66,14 +75,14 @@ def uniPrint(count, root, word, ROOT, s, un):
     return
 
 def add(node, count, word, unic, s):
-    if count == (len(word)):
+    if( count == (len(word))):
         node.unic[s] = unic
         # print(node.unic)
         return
 
     for chaild in node.children:
 
-        if chaild.letter == word[count]:
+        if (chaild.letter == word[count]):
             node = chaild
             count = count + 1
             add(node, count, word, unic, s)
@@ -89,7 +98,7 @@ def add(node, count, word, unic, s):
 
 def add_unicode(root):
     add(root, 0, "*", ' ', 0)
-    add(root, 0, "sri", '\u0DC1\u0DD3\u0DD6', 0)
+    add(root, 0, "sri", '\u0DC1\u0DCA\u200D\u0DBB\u0DD3', 0)
     add(root, 0, "k", '\u0D9A', 0)
     add(root, 0, "Kh", '\u0D9B', 0)
     add(root, 0, "g", '\u0D9C', 0)
@@ -106,22 +115,28 @@ def add_unicode(root):
     add(root, 0, "t", '\u0DA7', 0)
     add(root, 0, "T", '\u0DA8', 0)
     add(root, 0, "d", '\u0DA9', 0)
-    add(root, 0, "Dh", '\u0DAA', 0)
+    add(root, 0, "DDh", '\u0DAA', 0)
     add(root, 0, "N", '\u0DAB', 0)
     add(root, 0, "ND", '\u0DAC', 0)
     add(root, 0, "th", '\u0DAD', 0)
     add(root, 0, "Th", '\u0DAE', 0)
     add(root, 0, "dh", '\u0DAF', 0)
-    add(root, 0, "Dh", '\u0DB0', 0)
+    add(root, 0, "DH", '\u0DB0', 0)
     add(root, 0, "n", '\u0DB1', 0)
+    add(root, 0, "q", '', 0)
+    add(root, 0, "z", '', 0)
+    add(root, 0, "Q", '', 0)
+    add(root, 0, "Z", '', 0)
+    add(root, 0, "x", '', 0)
+    add(root, 0, "X", '', 0)
 
     add(root, 0, "Dh", '\u0DB3', 0)
     add(root, 0, "p", '\u0DB4', 0)
-    add(root, 0, "Ph", '\u0DB5', 0)
+    add(root, 0, "PH", '\u0DB5', 0)
     add(root, 0, "b", '\u0DB6', 0)
     add(root, 0, "Bh", '\u0DB7', 0)
     add(root, 0, "m", '\u0DB8', 0)
-    add(root, 0, "Mb", '\u0DB9', 0)
+    add(root, 0, "mb", '\u0DB9', 0)
     add(root, 0, "y", '\u0DBA', 0)
     add(root, 0, "r", '\u0DBB', 0)
     add(root, 0, "l", '\u0DBD', 0)
@@ -135,30 +150,30 @@ def add_unicode(root):
     add(root, 0, "f", '\u0DC6', 0)
     add(root, 0, "NN", '\u0D82', 2)
 
-    add(root, 0, "a", '*', 1)
+    add(root, 0, "a", '*', 1)  
     add(root, 0, "aa", '\u0DCF', 1)
     add(root, 0, "ae", '\u0DD0', 1)
-    add(root, 0, "aae", '\u0DD1', 1)
+    add(root, 0, "aee", '\u0DD1', 1)
     add(root, 0, "i", '\u0DD2', 1)
     add(root, 0, "ii", '\u0DD3', 1)
     add(root, 0, "u", '\u0DD4', 1)
     add(root, 0, "uu", '\u0DD6', 1)
-    add(root, 0, "r", '\u0DD8', 1)
+    add(root, 0, "ru", '\u0DD8', 1)
     add(root, 0, "e", '\u0DD9', 1)
     add(root, 0, "ee", '\u0DDA', 1)
-    add(root, 0, "ai", '\u0DDB', 1)
+    add(root, 0, "ei", '\u0DDB', 1)
     add(root, 0, "o", '\u0DDC', 1)
     add(root, 0, "oo", '\u0DDD', 1)
     add(root, 0, "au", '\u0DDE', 1)
-    add(root, 0, "I", '\u0DDF', 1)
-    add(root, 0, "rr", '\u0DF2', 1)
-    add(root, 0, "II", '\u0DF3', 1)
-    add(root, 0, "RR", '\u0DCAu200D\u0DBB', 1)
-    add(root, 0, "RRi", '\u0DCAu200D\u0DBB\u0DD2', 1)
-    add(root, 0, "RRii", '\u0DCAu200D\u0DBB\u0DD3', 1)
+    add(root, 0, "UI", '\u0DDF', 1)
+    add(root, 0, "RRU", '\u0DF2', 1)
+    add(root, 0, "RR", '\u0DCA\u200D\u0DBB', 1)
+    add(root, 0, "RRi", '\u0DCA\u200D\u0DBB\u0DD2', 1)
+    add(root, 0, "RRii", '\u0DCA\u200D\u0DBB\u0DD3', 1)
 
 
     add(root, 0, "a", '\u0D85', 2)
+    add(root, 0, "Y", '\u00CA', 2)
     add(root, 0, "aa", '\u0D86', 2)
     add(root, 0, "ae", '\u0D87', 2)
     add(root, 0, "aae", '\u0D88', 2)
@@ -166,8 +181,8 @@ def add_unicode(root):
     add(root, 0, "ii", '\u0D8A', 2)
     add(root, 0, "u", '\u0D8B', 2)
     add(root, 0, "uu", '\u0D8C', 2)
-    add(root, 0, "r", '\u0D8D', 2)
-    add(root, 0, "rr", '\u0D8E', 2)
+    add(root, 0, "R", '\u0D8D', 2)
+    add(root, 0, "RR", '\u0D8E', 2)
     add(root, 0, "I", '\u0D8F', 2)
     add(root, 0, "II", '\u0D90', 2)
     add(root, 0, "e", '\u0D91', 2)
@@ -175,7 +190,5 @@ def add_unicode(root):
     add(root, 0, "ai", '\u0D93', 2)
     add(root, 0, "o", '\u0D94', 2)
     add(root, 0, "oo", '\u0D95', 2)
-    add(root, 0, "au", '\u0D96', 2)
-    add(root, 0, "au", '\u0D96', 2)
     add(root, 0, "au", '\u0D96', 2)
     return root
