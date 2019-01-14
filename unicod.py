@@ -19,14 +19,14 @@ def uniPrint(count, root, word, ROOT, s, un):
     if(len(word)==count+1):    
         o = ord(word[count])
         if(((64>o)&(91<o))|((96>o)&(123<o))):
-            print('exit')
+            #print('exit')
             return False
     node = root
     temp = root
     state = 0
     puni = '\u0000'
     if (count >= (len(word)+1)):
-        print("exit")
+        #print("exit")
         return
 
     for child in node.children:

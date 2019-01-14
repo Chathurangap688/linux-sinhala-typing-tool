@@ -25,7 +25,7 @@ def on_press(key):
         temp_word = word
         word = ""
         uni_code = unicod.get_unicode(root,temp_word)
-        print(uni_code)
+        #print(uni_code)
         state = type.typeUni(uni_code,state,temp_word)
         state =False
         word = ""
@@ -36,11 +36,11 @@ def on_press(key):
         if(state):
             pass
         a=ord(key.char)
-        print(a)
-        print(word)
+        #print(a)
+        #print(word)
         if(a>124 | a<65):
             word = word[:-1]
-            print('wrong code')
+            #print('wrong code')
             return
         print(format(key.char))
         word += format(key.char)
@@ -53,3 +53,5 @@ def on_press(key):
 with keyboard.Listener(
         on_press=on_press) as listener:
     listener.join()
+
+print("hello")
