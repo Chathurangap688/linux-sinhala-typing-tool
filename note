@@ -1,6 +1,0 @@
-#install pyhook if not installed
-sudo apt-get install  python-xlib
-#Xlib Error
-xhost +
-#pyperclip
-pip install pyperclip
