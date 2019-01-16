@@ -1,3 +1,4 @@
+
 from pynput.keyboard import Key, Controller
 
 keyboard = Controller()
@@ -17,26 +18,11 @@ def typeUni(word,state,len):
         #keyboard.press(Key.right)
         #keyboard.release(Key.right)
         #keyboard.type(' : ')
-        word = word.replace("\\","")
-
-        #print(word)
-        for x in word:
-            
-            if((x == 'u')|(x == 'U')):
-                with keyboard.pressed(Key.shift):
-                     with keyboard.pressed(Key.ctrl):
-
-                         keyboard.type('u')
-            else:
-                keyboard.type(x)
-
-
-        # with keyboard.pressed(Key.shift):
-        #     with keyboard.pressed(Key.ctrl):
-        #         keyboard.type(word)
-        keyboard.type(' ')
+        with keyboard.pressed(Key.shift):
+            with keyboard.pressed(Key.ctrl):
+                keyboard.type(word)
         keyboard.type(' ')
         
         state = False
     
-    return state 
+    return state
