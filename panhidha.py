@@ -34,7 +34,7 @@ class MyFrame(wx.Frame):
 
     def __set_properties(self):
         # begin wxGlade: MyFrame.__set_properties
-        self.SetTitle(u"පන්හිද-tyiping")
+        self.SetTitle(u"පන්හිද-typing")
         self.SetBackgroundColour(wx.Colour(216, 191, 216))
         self.button_1.SetMinSize((282, 80))
         self.button_1.SetBackgroundColour(wx.Colour(0, 255, 0))
@@ -44,7 +44,7 @@ class MyFrame(wx.Frame):
         # begin wxGlade: MyFrame.__do_layout
         sizer_1 = wx.BoxSizer(wx.VERTICAL)
         sizer_1.Add(self.button_1, 0, 0, 0)
-        feedback = wx.StaticText(self, wx.ID_ANY, u"\nsimple sinhala typing tool\nපන්හිද-tyiping.beta\nfor stop පන්හිද-tyiping press Esc\n")
+        feedback = wx.StaticText(self, wx.ID_ANY, u"\nsimple sinhala typing tool\nපන්හිද-typing.beta\nfor stop පන්හිද-typing press Esc\n")
         feedback.SetFocus()
         sizer_1.Add(feedback, 0, 0, 0)
         sizer_1.Add(self.feedbacklink, 0, 0, 0)
