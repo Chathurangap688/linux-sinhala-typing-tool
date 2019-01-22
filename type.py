@@ -1,23 +1,28 @@
-import pyautogui
-# import sys
-from sys import exit
 
-def type_unicode(word,state,lenth):
-    # print(state)
-    
-   
+from pynput.keyboard import Key, Controller
+
+keyboard = Controller()
+
+def typeUni(word,state,len):
+    if(word == False):
+        state = False
+        return 
+    word = word.replace('*','')
     if(state):
-        print state
-        return
-    for x in range(lenth+1):
-        pyautogui.press('backspace')
-
+     
+        len += 'd'
+        for x in len:
+            #print(word)
+            keyboard.press(Key.backspace)
+            keyboard.release(Key.backspace)
+        #keyboard.press(Key.right)
+        #keyboard.release(Key.right)
+        #keyboard.type(' : ')
+        with keyboard.pressed(Key.shift):
+            with keyboard.pressed(Key.ctrl):
+                keyboard.type(word)
+        keyboard.type(' ')
+        
+        state = False
     
-    for x in range(0,len(word),5):
-        pyautogui.hotkey('ctrl', 'shift', 'u')
-    
-        pyautogui.typewrite(word[x+1:x+5])
-
-    pyautogui.press('space')
-    exit()
-    
+    return state
