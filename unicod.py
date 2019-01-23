@@ -1,6 +1,9 @@
 import data_tree as tree
+
 co = 0
-def get_unicode(root, word):
+
+def get_unicode(root, word):                    #arguments - root - passing the tree
+                                                #            word - user input
     global co
     co = 0
     un = ""
@@ -8,17 +11,19 @@ def get_unicode(root, word):
     return uniPrint(0, root, word, root, 1, un)
 
 
-def uniPrint(count, root, word, ROOT, s, un):
+def uniPrint(count, root, word, ROOT, s, un):       #arguments -  count - a value for recognize patter
+                                                    #          -  root  - passing the tree
+                                                    #          -  word  - user input
+                                                    #          -  ROOt  - 
+                                                    #          -  s     - order
+                                                    #          -  un    - unicode 
     global co
     co = co + 1
     if(co>200):
-        #print('max')
-        #exit()
-        #print("jjjj")
         return False
     if(len(word)==count+1):    
-        o = ord(word[count])
-        if(((64>o)&(91<o))|((96>o)&(123<o))):
+        o = ord(word[count])                        #return an integer representing the Unicode code point of the character 
+        if(((64>o)&(91<o))|((96>o)&(123<o))):       # check if character are english letters
             #print('exit')
             return False
     node = root
@@ -96,7 +101,7 @@ def add(node, count, word, unic, s):
     add(node, count, word, unic, s)
     return
 
-def add_unicode(root):
+def add_unicode(root):                                              #adding values to root.
     add(root, 0, "*", ' ', 0)
     add(root, 0, "sri", '\u0DC1\u0DCA\u200D\u0DBB\u0DD3', 0)
     add(root, 0, "k", '\u0D9A', 0)
