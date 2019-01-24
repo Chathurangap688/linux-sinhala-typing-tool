@@ -8,7 +8,6 @@
                          රසික මදුරංග සහ 
                          චතුරංග ප්‍රියදර්ශණ  
                         
-install pynput
-
+##### install pynput
 
         pip install pynput
