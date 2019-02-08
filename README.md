@@ -9,11 +9,5 @@
                          චතුරංග ප්‍රියදර්ශණ  
                          
 ## No need any packages or root permition for executable vertion
-Dowlode panhdha exicutabal file and documantation............
-
-             https://drive.google.com/drive/folders/1k3s7oLnU9-dgzm-Nz_-Gblko1zSGUkS1?usp=sharing
+[Dowlode panhdha exicutabal file and documantation............](https://drive.google.com/drive/folders/1k3s7oLnU9-dgzm-Nz_-Gblko1zSGUkS1?usp=sharing)
                         
-install pynput
-
-
-        pip install pynput
