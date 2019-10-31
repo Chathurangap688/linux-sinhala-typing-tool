@@ -1,4 +1,4 @@
-
+import numpy
 class Tree(object):
     """docstring for Tree"""
 
